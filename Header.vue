@@ -19,6 +19,11 @@
         </li>
       </ul>
 
+      깃과 연결되는지 테스트
+      소스트리와도 연결되는지
+
+
+
       <!-- tiny only nav-->
       <ul class="nav visible-xs" id="xs-menu">
         <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
