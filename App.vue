@@ -22,7 +22,7 @@
                   <!-- main col left -->
                   <div class="col-sm-5">
 
-                    <div id="defaultText"></div>
+                    <!--<div id="defaultText"></div>-->
 
 
 

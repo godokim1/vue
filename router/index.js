@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import DefaultText from '@/components/default_text';
+// import DefaultText from '@/components/default_text';
+import Default from '@/components/default';
 import Header from '@/components/header';
 import TopNavi from '@/components/top_navi';
 
@@ -11,9 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      // naem: "default_text",
       components: {
-        default: DefaultText,
+        default: Default,
         header: Header,
         top_navi: TopNavi,
       },
