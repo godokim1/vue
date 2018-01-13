@@ -2,12 +2,14 @@
 <template>
   <div class="well">
     <form class="form-horizontal" role="form">
-      <h4>What's New</h4>
+      <h4>입력하는</h4>
       <div class="form-group" style="padding:14px;">
-        <div v-once>{{storageText}}</div>
-        <textarea class="form-control" placeholder="Update your status" v-model="msg" v-on:keyup.enter="submit"></textarea>
+        <h3>텍스트 입력</h3>
+        <input class="form-control" value="" v-model="textValue" v-on:keyup.enter="dataSaveEvent()" placeholder="텍스트 입력">
+        <h3>이미지 입력</h3>
+        <input class="form-control" value="" v-model="imgValue" v-on:keyup.enter="dataSaveEvent()" placeholder="이미지 입력">
       </div>
-      <button type="button" @click="testing1">글쓰기</button>
+      <button type="button" @click="dataSaveEvent">글쓰기</button>
     </form>
   </div>
 </template>
@@ -15,19 +17,22 @@
 
 <script>
 export default {
-  created() {
-    localStorage.test = 1;
-  },
   data() {
     return {
-      storageText: localStorage.item,
-      msg: '',
+      textValue: null,
+      imgValue: null,
     };
   },
   methods: {
-    testing1() {
-      localStorage.item = this.msg;
-      return false;
+    dataSaveEvent() {
+      if (this.imgValue !== null) {
+        localStorage.setItem('itemTextImgSrc', this.imgValue);
+      }
+
+      if (this.textValue !== null) {
+        localStorage.setItem('itemText', this.textValue);
+      }
+      location.reload();
     },
   },
 };
