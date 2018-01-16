@@ -11,7 +11,7 @@
 
             <!-- topNavi -->
             <router-view name="top_navi"/>
-
+            <!-- default component -->
             <router-view/>
 
           </div>

@@ -26,6 +26,7 @@
         <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">공유하기</a></div>
       </div>
       <div class="btn-area">
+        <button type="button" @click="testEvent">배열테스</button>
         <button type="button" @click="likeEvent">좋아요</button>
         <button type="button" @click="replyDepth01Event">댓글쓰기</button>
       </div>
@@ -36,6 +37,9 @@
 
 <script>
   export default {
+    // updated() {
+    //
+    // },
     created() {
       if (this.like === null || this.like === 'NaN') {
         this.like = localStorage.setItem('itemlike', 0);
@@ -48,9 +52,13 @@
         replyDepth01: localStorage.getItem('itemReplyDepth01'),
         like: localStorage.getItem('itemlike'),
         replyDepth01Input: null,
+        array: [],
       };
     },
     methods: {
+      testEvent() {
+        this.array.push({ item: 'item' });
+      },
       replyDepth01Event() {
         // console.log(event.target);
         localStorage.setItem('itemReplyDepth01', this.replyDepth01Input);
@@ -62,6 +70,7 @@
           this.like = localStorage.getItem('itemlike');
         }
         // localStorage.setItem('itemReplyDepth01', this.replyDepth01Input);
+        location.reload();
       },
     },
   };
